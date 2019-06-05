@@ -1,16 +1,18 @@
-package br.com.es.ufg.persistencia.torneio.dominio;
+package br.com.es.ufg.persistencia.torneio.persistencia.entidades;
 
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.Min;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
-public class Jogador {
+public class Equipe {
 
   @Id
   @GeneratedValue
@@ -19,7 +21,7 @@ public class Jogador {
   @NotNull
   private String nome;
 
-  @Min(0L)
-  private int idade;
+  @ManyToMany
+  private Set<Usuario> jogadores = new HashSet<>();
 
 }
