@@ -1,0 +1,26 @@
+<div class="app-container" [class.app-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="app-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="app-name">SOFT PERS - Torneio!</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="app-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list class="app-nav-list">
+        <a mat-list-item routerLink="/" routerLinkActive="link-active" color="accent">
+          <mat-icon matListIcon>calendar_today</mat-icon>
+          <p matLine>Lista de torneios</p>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <section class="app-router-container">
+        <router-outlet></router-outlet>
+      </section>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
