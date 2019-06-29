@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Data
 @Entity
-public class Usuario implements Entidade<Long> {
+public class Usuario {
 
   @Id
   @GeneratedValue

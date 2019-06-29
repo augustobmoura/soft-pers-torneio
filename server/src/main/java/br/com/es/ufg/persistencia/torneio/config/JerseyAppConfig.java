@@ -1,5 +1,6 @@
 package br.com.es.ufg.persistencia.torneio.config;
 
+import br.com.es.ufg.persistencia.torneio.Api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +14,7 @@ public class JerseyAppConfig extends ResourceConfig {
     packages("br.com.es.ufg.persistencia.torneio.recursos");
     packages("io.swagger.v3.jaxrs2.integration.resources");
     register(CORSResponseFilter.class);
+    register(Api.class);
   }
 
   @Bean
