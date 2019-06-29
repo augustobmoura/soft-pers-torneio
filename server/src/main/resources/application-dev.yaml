@@ -1,8 +1,4 @@
 spring:
-  datasource:
-    url: 'jdbc:postgresql:${DB_NAME:torneios}'
-    username: ${DB_USER:utorneio}
-    password: ${DB_PASSWORD:torneios@ufg}
   jpa:
     generate-ddl: true
     hibernate:
