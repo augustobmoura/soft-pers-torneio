@@ -12,6 +12,7 @@ public class JerseyAppConfig extends ResourceConfig {
   public JerseyAppConfig() {
     packages("br.com.es.ufg.persistencia.torneio.recursos");
     packages("io.swagger.v3.jaxrs2.integration.resources");
+    register(CORSResponseFilter.class);
   }
 
   @Bean
