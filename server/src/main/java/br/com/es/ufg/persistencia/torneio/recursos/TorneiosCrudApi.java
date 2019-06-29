@@ -1,6 +1,5 @@
 package br.com.es.ufg.persistencia.torneio.recursos;
 
-import br.com.es.ufg.persistencia.torneio.persistencia.entidades.Equipe;
 import br.com.es.ufg.persistencia.torneio.persistencia.entidades.Torneio;
 import org.springframework.data.repository.CrudRepository;
 
@@ -19,7 +18,7 @@ public class TorneiosCrudApi extends EntidadeCrudApi<Torneio> {
 
   @Override
   protected String getDescricaoEntidade() {
-    return "torneios";
+    return "torneio";
   }
 
 }
