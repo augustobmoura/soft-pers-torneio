@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import java.util.Optional;
 
+@Consumes("application/json")
 @Produces("application/json")
 public abstract class EntidadeCrudApi<T> {
 
