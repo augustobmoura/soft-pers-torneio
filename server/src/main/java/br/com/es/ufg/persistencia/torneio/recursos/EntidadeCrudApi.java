@@ -1,5 +1,6 @@
 package br.com.es.ufg.persistencia.torneio.recursos;
 
+import br.com.es.ufg.persistencia.torneio.persistencia.entidades.Entidade;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.inject.Inject;
@@ -8,7 +9,7 @@ import java.util.Optional;
 
 @Consumes("application/json")
 @Produces("application/json")
-public abstract class EntidadeCrudApi<T> {
+public abstract class EntidadeCrudApi<T extends Entidade<Long>> {
 
   private final CrudRepository<T, Long> repositorio;
 
@@ -42,6 +43,8 @@ public abstract class EntidadeCrudApi<T> {
     if (!repositorio.existsById(id)) {
       throw naoEncontrouPersistido(id);
     }
+
+    novo.setId(id);
 
     return repositorio.save(novo);
   }

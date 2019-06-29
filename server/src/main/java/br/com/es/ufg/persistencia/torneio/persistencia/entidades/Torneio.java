@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
-public class Torneio {
+public class Torneio implements Entidade<Long> {
 
   @Id
   @GeneratedValue
