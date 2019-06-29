@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import java.util.Optional;
 
+@Produces("application/json")
 public abstract class EntidadeCrudApi<T> {
 
   private final CrudRepository<T, Long> repositorio;
@@ -17,10 +18,12 @@ public abstract class EntidadeCrudApi<T> {
 
   protected abstract String getDescricaoEntidade();
 
+  @GET
   public Iterable<T> encontrarTodos() {
     return repositorio.findAll();
   }
 
+  @GET
   @Path("/{id}")
   public T encontrar(@PathParam("id") final Long id) {
     return repositorio.findById(id)

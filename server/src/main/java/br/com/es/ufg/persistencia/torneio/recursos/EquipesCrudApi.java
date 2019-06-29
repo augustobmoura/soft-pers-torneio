@@ -5,6 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.Path;
 
 @Named
