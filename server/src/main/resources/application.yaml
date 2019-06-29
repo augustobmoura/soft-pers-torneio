@@ -4,4 +4,8 @@ spring:
     username: ${DB_USER:utorneio}
     password: ${DB_PASSWORD:torneios@ufg}
     driver-class-name: org.postgresql.Driver
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
   jersey.application-path: /api
